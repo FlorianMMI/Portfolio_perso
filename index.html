@@ -38,6 +38,36 @@
         <h1>Bienvenue sur mon portfolio</h1>
         
     </header>
+    <section class ="Contact">
+        <div class="Contact_txt">
+            <p>Vous souhaitez me contacter ? Remplissez le formulaire ci-contre ou choisisez une des options ci-dessous. Vous recevrez une réponse dans les plus brefs délai</p>
+        </div>
+        <div class = "Contact_form">
+            <form action="/submit_form" method="post"></form>
+
+                <div class = "form_item">
+                    <label class="label" for="name">Name:</label>
+                    <input  class = "form_ph" type="text" id="name" name="name" required>
+                </div>
+                
+                
+                <div class = "form_item">
+                    <label class="label" for="email">Email:</label>
+                <input class = "form_ph" type="email" id="email" name="email" required>
+                </div>
+                
+                
+                <div class = "form_item">
+                    <label class="label" for="message">Message:</label>
+                    <textarea class = "form_ph" id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                
+                <button class = "button mouseover" type="submit">Contact</button>
+            </form>
+        </div>
+
+    </section>
     
 </body>
 <script src="script.js"></script>

@@ -1,3 +1,5 @@
+
+
 const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
 
@@ -25,6 +27,7 @@ const colors = [
     "#8b008b",
     "#800080"
 ];
+
 
 circles.forEach(function (circle, index) {
   circle.x = 0;
@@ -62,6 +65,8 @@ function animateCircles() {
  
   requestAnimationFrame(animateCircles);
 }
+
+
 
 animateCircles();
 

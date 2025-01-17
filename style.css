@@ -139,7 +139,7 @@ body {
     list-style: none;
     padding: 1rem;
     transition: color 0.3s, background-color 0.3s;
-    cursor: pointer;
+    cursor: none;
 }
 
 .nav__item:hover {
@@ -224,4 +224,29 @@ body {
 .button:hover {
     background-color: transparent;
     color: var(--text-color);
+}
+
+.btn{
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: none;
+    transition: all 0.3s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+.Button_vid{
+    border: 1px solid var(--clr-neutral-400);
+    background-color: var(--text-color);
+    border-radius: 1rem;
+    padding: 0.8rem;
+    font-size: var(--fs-300);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    cursor: none;
+    width: 200px;
+}
+
+.btn:hover{
+    color: var(--clr-primary-500);
 }

@@ -6,6 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
     <div class="circle"></div>
@@ -33,17 +36,29 @@
             <li class="nav__item">Service</li>
             <li class="nav__item">Work</li>
             <li class="nav__item">About</li>
-            <li class="nav__item">Contact</li>
+            <li class="nav__item"><a class ="btn" href="#Contact">Contact</a></li>
         </nav>
         <h1>Bienvenue sur mon portfolio</h1>
         
     </header>
-    <section class ="Contact">
+
+
+    <section id = "Work" class = "Work">
+        <div id = "Video" class = "card"></div>
+    </section>
+
+    <section class = "skills">
+        
+    </section>
+
+
+
+    <section class ="Contact" id = "Contact">
         <div class="Contact_txt">
             <p>Vous souhaitez me contacter ? Remplissez le formulaire ci-contre ou choisisez une des options ci-dessous. Vous recevrez une réponse dans les plus brefs délai</p>
         </div>
         <div class = "Contact_form">
-            <form action="/submit_form" method="post"></form>
+            <form id = "#myform" action="/submit_form" method="post" id="form"></form>
 
                 <div class = "form_item">
                     <label class="label" for="name">Name:</label>
@@ -52,23 +67,84 @@
                 
                 
                 <div class = "form_item">
-                    <label class="label" for="email">Email:</label>
-                <input class = "form_ph" type="email" id="email" name="email" required>
+                    <label class="label" for="mail">Email:</label>
+                <input class = "form_ph" type="email" id="mail" name="mail" required>
                 </div>
                 
                 
                 <div class = "form_item">
                     <label class="label" for="message">Message:</label>
-                    <textarea class = "form_ph" id="message" name="message" rows="4" required></textarea>
+                    <textarea class = "form_ph" id="message" name="message" required></textarea>
                 </div>
                 
                 
-                <button class = "button mouseover" type="submit">Contact</button>
+                <div class="form_item">
+                    <button id = "form_item" class = "button" onclick="sendEmail()">Envoyer</button>
+                </div>
             </form>
         </div>
 
     </section>
     
 </body>
+
+
+
+
+
+
+
 <script src="script.js"></script>
+<script src = "sketch.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+
+    (function(){
+        emailjs.init({
+            publicKey: "t6Q21Zn_bLLK1StC_",
+        });
+    })();
+
+        emailjs.init({
+    publicKey: 't6Q21Zn_bLLK1StC_',
+    // Do not allow headless browsers
+    blockHeadless: true,
+    blockList: {
+        
+    },
+    limitRate: {
+        // Set the limit rate for the application
+        id: 'form_item',
+        // Allow 1 request per 10s
+        throttle: 10000,
+    },
+    });
+
+    
+
+    let template_ID = "template_x9mejja";
+    let service_ID = "service_xer9vzs";
+
+    function sendEmail(){
+        var templateParams = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("mail").value,
+        body : document.getElementById("message").value
+    };
+
+    let form = document.getElementById("#myform");
+
+    console.log(templateParams)
+        emailjs.sendForm(service_ID, template_ID, form)
+        .then(function(response){
+            console.log("SUCCESS", response);
+        }, function(error){
+            console.log("FAILED", error);
+        });
+    }
+    
+        
+</script>
 </html>

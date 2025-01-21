@@ -133,6 +133,7 @@ body {
     padding: 2rem 0;
     background-color: var(--clr-opacity-600);
     backdrop-filter: blur(5px);
+    z-index: 999;
 }
 
 .nav__item {
@@ -249,4 +250,48 @@ body {
 
 .btn:hover{
     color: var(--clr-primary-500);
+}
+
+
+.Work{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    scale: 0.8;
+}
+
+.work__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px var(--clr-neutral-400);
+    width: min-content;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.card__para{
+    text-align: justify;
+    font-size: var(--fs-600);
+}
+
+.card__button {
+    border: 1px solid var(--clr-neutral-400);
+    background-color: var(--text-color);
+    border-radius: 1rem;
+    padding: 0.8rem;
+    font-size: var(--fs-300);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    cursor: none;
+}
+
+
+.card__button:hover {
+    background-color: transparent;
+    color: var(--text-color);
 }

@@ -67,6 +67,19 @@ function animateCircles() {
 }
 
 
+const workcards = document.querySelectorAll('.work__card');
+
+workcards.forEach(function(card) {
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'scale(1.1)';
+    card.style.transition = 'transform 0.3s ease';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'scale(1)';
+  });
+});
+
 
 animateCircles();
 

@@ -2,6 +2,7 @@
 html {
 	scroll-behavior: smooth;
 	cursor: none;
+	user-select: none;
 }
 
 article, aside, details, figcaption, figure, 

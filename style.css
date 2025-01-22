@@ -122,6 +122,11 @@ body {
     height: 100vh;
 }
 
+.header__title{
+    display: flex;
+    position : absolute;
+}
+
 .header__nav{
     display: flex;
     flex-direction: row;
@@ -271,6 +276,13 @@ body {
     padding: 2rem;
     margin-bottom: 3rem;
     border-radius: 1rem;
+}
+
+.work__card:hover{
+    
+
+    border: solid 1px var(--clr-primary-500);
+    
 }
 
 .card__para{

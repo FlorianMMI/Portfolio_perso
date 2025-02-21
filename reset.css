@@ -3,6 +3,7 @@ html {
 	scroll-behavior: smooth;
 	cursor: none;
 	user-select: none;
+	max-width: 100%;
 }
 
 article, aside, details, figcaption, figure, 
@@ -31,5 +32,10 @@ table {
 
 a {
 	text-decoration: none;
+	color: inherit;
+}
+
+html, body {
+	overflow-x: hidden;
 }
 

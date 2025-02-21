@@ -317,3 +317,8 @@ body {
     margin: 3rem;
     cursor: none;
 }
+
+.Container__img{
+    scale: 0.5;
+    border-radius: 24px;
+}

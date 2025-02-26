@@ -80,6 +80,43 @@ workcards.forEach(function(card) {
   });
 });
 
+const toggleButton = document.createElement('button');
+toggleButton.textContent = 'Toggle Dark/Light Mode';
+toggleButton.style.position = 'fixed';
+toggleButton.style.top = '20px';
+toggleButton.style.right = '20px';
+toggleButton.style.padding = '10px 20px';
+toggleButton.style.zIndex = '1000';
+document.body.appendChild(toggleButton);
+
+const darkModeStyle = document.createElement('style');
+darkModeStyle.textContent = `
+  body.dark-mode {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  body.dark-mode .work__card {
+    background-color: #fff;
+  }
+
+  body.dark-mode .button .card__button {
+    color: #fff;
+    background-color : #000;
+  }
+
+  body.dark-mode .button:hover {
+    color: #000;
+    background-color : #fff;
+  }
+
+  
+`;
+document.head.appendChild(darkModeStyle);
+
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
 
 animateCircles();
 
